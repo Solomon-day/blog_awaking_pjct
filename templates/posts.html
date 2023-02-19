@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+///Posts
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>///Posts</h1>
+
+
+    {% for element in articles %}
+    <div class="alert alert-info">
+        <h2>{{ element.title }}</h2>
+        <p>{{ element.intro }}</p>
+        <p><b>Date: {{ element.date.date() }}</b></p>
+        <a href="/posts/{{ element.id }}" class="btn btn-warning"> read </a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
